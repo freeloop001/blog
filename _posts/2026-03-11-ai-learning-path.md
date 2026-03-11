@@ -3,7 +3,7 @@ layout: post
 title: "AI 大模型应用开发学习计划"
 date: 2026-03-11
 tags: [AI, LLM, 学习计划, Python]
-categories: [学习笔记]
+categories: [learning]
 ---
 
 > 专注大模型工程和应用开发，不做机器学习和深度学习，不做研究、训练和推理，只做工程开发。

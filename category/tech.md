@@ -1,0 +1,25 @@
+---
+layout: default
+title: 技术文章
+---
+
+<ul class="post-list">
+{% for post in site.categories.tech %}
+  <li class="post-item">
+    <h2 class="post-title">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </h2>
+    <div class="post-meta">
+      <time>{{ post.date | date: "%Y年%m月%d日" }}</time>
+    </div>
+    <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+    {% if post.tags %}
+    <div class="post-tags">
+      {% for tag in post.tags %}
+        <span class="post-tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>

@@ -37,4 +37,5 @@ def search():
 if __name__ == '__main__':
     print("运行: python flask_basic.py")
     print("访问: http://127.0.0.1:5000")
-    app.run(debug=True)
+    # debug 模式需要系统安装 libffi-dev
+    app.run(debug=False, host='0.0.0.0', port=5000)

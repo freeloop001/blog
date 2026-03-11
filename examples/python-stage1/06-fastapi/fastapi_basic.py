@@ -29,7 +29,11 @@ def create_item(item: Item):
 
 # 运行方式: uvicorn fastapi_basic:app --reload
 # 访问文档: http://127.0.0.1:8000/docs
+# 或: python -m uvicorn fastapi_basic:app --reload
 
 if __name__ == "__main__":
+    import uvicorn
     print("运行: uvicorn fastapi_basic:app --reload")
+    print("或: python -m uvicorn fastapi_basic:app --reload")
     print("访问: http://127.0.0.1:8000/docs")
+    uvicorn.run(app, host="0.0.0.0", port=8000)

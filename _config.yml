@@ -1,3 +1,10 @@
 title: Freeloop's Blog
 description: 技术博客，分享编程与思考
 future: true
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    rouge:
+      theme: github

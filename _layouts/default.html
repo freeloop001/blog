@@ -6,6 +6,8 @@
   <title>{{ page.title | default: site.title }}</title>
   <meta name="description" content="{{ site.description }}">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <!-- PrismJS 代码高亮 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="/feed.xml">
 </head>
 <body>
@@ -31,5 +33,12 @@
       <p>&copy; 2026 <a href="/">{{ site.title }}</a>. All rights reserved.</p>
     </footer>
   </div>
+
+  <!-- PrismJS 代码高亮 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>
 </body>
 </html>

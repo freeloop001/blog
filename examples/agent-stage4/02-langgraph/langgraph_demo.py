@@ -71,8 +71,7 @@ print(f"消息历史: {result['messages']}")
 # ============ 5. 带条件分支 ============
 print("\n=== 带条件分支 ===")
 
-from langgraph.graph import Branch
-
+# 简化版条件分支示例
 def should_continue(state):
     """判断是否继续"""
     if len(state.get("messages", [])) < 3:

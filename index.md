@@ -1,10 +1,25 @@
 ---
-layout: home
-title: Welcome
+layout: default
+title: 首页
 ---
 
-# Welcome to My Blog
-
-This is my first blog post on GitHub Pages!
-
-Stay tuned for more updates.
+<ul class="post-list">
+{% for post in site.posts %}
+  <li class="post-item">
+    <h2 class="post-title">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </h2>
+    <div class="post-meta">
+      <time>{{ post.date | date: "%Y-%m-%d" }}</time>
+    </div>
+    <p class="post-excerpt">{{ post.excerpt }}</p>
+    {% if post.tags %}
+    <div class="post-tags">
+      {% for tag in post.tags %}
+        <span class="post-tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>

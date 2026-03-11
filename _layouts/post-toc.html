@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <!-- PrismJS 代码高亮 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="/feed.xml">
+</head>
+<body>
+  <div class="container with-toc">
+    <header class="header">
+      <h1 class="site-title">
+        <a href="/">{{ site.title }}</a>
+      </h1>
+      <p class="site-description">{{ site.description }}</p>
+      <nav class="nav">
+        <a href="/" {% if page.url == "/" or page.url == "/index.html" %}class="active"{% endif %}>首页</a>
+        <a href="/category/tech/" {% if page.url contains "/category/tech" or page.url contains "/tech/" %}class="active"{% endif %}>技术文章</a>
+        <a href="/category/learning/" {% if page.url contains "/category/learning" or page.url contains "/learning/" %}class="active"{% endif %}>学习笔记</a>
+        <a href="/about" {% if page.url contains "/about" %}class="active"{% endif %}>关于</a>
+      </nav>
+    </header>
+
+    <aside class="toc-sidebar">
+      <div class="toc">
+        <h3 class="toc-title">目录</h3>
+        <nav class="toc-nav">
+          {{ page.toc }}
+        </nav>
+      </div>
+    </aside>
+
+    <main class="with-toc-content">
+      {{ content }}
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 <a href="/">{{ site.title }}</a>. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- PrismJS 代码高亮 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>
+
+  <!-- TOC 滚动高亮 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tocLinks = document.querySelectorAll('.toc-nav a');
+      const headings = [];
+
+      // 收集所有标题元素
+      document.querySelectorAll('.post-content h2, .post-content h3').forEach(function(heading) {
+        if (heading.id) {
+          headings.push({
+            id: heading.id,
+            offset: heading.offsetTop
+          });
+        }
+      });
+
+      function updateActiveLink() {
+        const scrollTop = window.scrollY + 100;
+
+        let activeId = '';
+        for (let i = headings.length - 1; i >= 0; i--) {
+          if (scrollTop >= headings[i].offset) {
+            activeId = headings[i].id;
+            break;
+          }
+        }
+
+        tocLinks.forEach(function(link) {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + activeId) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', updateActiveLink);
+      updateActiveLink();
+    });
+  </script>
+</body>
+</html>

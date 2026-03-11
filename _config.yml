@@ -8,3 +8,5 @@ kramdown:
   syntax_highlighter_opts:
     rouge:
       theme: github
+  auto_ids: true
+  auto_id_prefix: ""

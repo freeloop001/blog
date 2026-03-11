@@ -469,3 +469,83 @@ body::before {
     gap: 20px;
   }
 }
+
+/* TOC Sidebar */
+.container.with-toc {
+  max-width: 1100px;
+}
+
+.toc-sidebar {
+  position: fixed;
+  left: 50%;
+  margin-left: -520px;
+  top: 180px;
+  width: 200px;
+}
+
+.toc {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.toc-title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.toc-nav {
+  list-style: none;
+}
+
+.toc-nav a {
+  display: block;
+  padding: 6px 0;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 13px;
+  transition: all 0.2s;
+  border-left: 2px solid transparent;
+  padding-left: 12px;
+  margin-left: -12px;
+}
+
+.toc-nav a:hover {
+  color: var(--accent);
+}
+
+.toc-nav a.active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  font-weight: 500;
+}
+
+.toc-nav .toc-h3 {
+  padding-left: 24px;
+  font-size: 12px;
+}
+
+.with-toc-content {
+  margin-left: 240px;
+  max-width: 800px;
+}
+
+/* Responsive TOC */
+@media (max-width: 1200px) {
+  .toc-sidebar {
+    display: none;
+  }
+
+  .with-toc-content {
+    margin-left: 0;
+  }
+}

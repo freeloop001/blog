@@ -5,23 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title | default: site.title }}</title>
   <meta name="description" content="{{ site.description }}">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
   <!-- PrismJS 代码高亮 -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.baseurl }}/feed.xml">
 </head>
 <body>
   <div class="container">
     <header class="header">
       <h1 class="site-title">
-        <a href="/">{{ site.title }}</a>
+        <a href="{{ site.baseurl }}/">{{ site.title }}</a>
       </h1>
       <p class="site-description">{{ site.description }}</p>
       <nav class="nav">
-        <a href="/" {% if page.url == "/" or page.url == "/index.html" %}class="active"{% endif %}>首页</a>
-        <a href="/category/tech/" {% if page.url contains "/category/tech" or page.url contains "/tech/" %}class="active"{% endif %}>技术文章</a>
-        <a href="/category/learning/" {% if page.url contains "/category/learning" or page.url contains "/learning/" %}class="active"{% endif %}>学习笔记</a>
-        <a href="/about" {% if page.url contains "/about" %}class="active"{% endif %}>关于</a>
+        <a href="{{ site.baseurl }}/" {% if page.url == "/" or page.url == "/index.html" %}class="active"{% endif %}>首页</a>
+        <a href="{{ site.baseurl }}/category/tech/" {% if page.url contains "/category/tech" or page.url contains "/tech/" %}class="active"{% endif %}>技术文章</a>
+        <a href="{{ site.baseurl }}/category/learning/" {% if page.url contains "/category/learning" or page.url contains "/learning/" %}class="active"{% endif %}>学习笔记</a>
+        <a href="{{ site.baseurl }}/about" {% if page.url contains "/about" %}class="active"{% endif %}>关于</a>
       </nav>
     </header>
 
@@ -30,7 +30,7 @@
     </main>
 
     <footer class="footer">
-      <p>&copy; 2026 <a href="/">{{ site.title }}</a>. All rights reserved.</p>
+      <p>&copy; 2026 <a href="{{ site.baseurl }}/">{{ site.title }}</a>. All rights reserved.</p>
     </footer>
   </div>
 

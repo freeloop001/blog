@@ -15,11 +15,11 @@ title: 首页
       <span class="post-category-link">
         {% for cat in post.categories %}
           {% if cat == "tech" %}
-            <a href="/category/tech/">技术文章</a>
+            <a href="{{ site.baseurl }}/category/tech/">技术文章</a>
           {% elsif cat == "learning" %}
-            <a href="/category/learning/">学习笔记</a>
+            <a href="{{ site.baseurl }}/category/learning/">学习笔记</a>
           {% else %}
-            <a href="/category/{{ cat }}/">{{ cat }}</a>
+            <a href="{{ site.baseurl }}/category/{{ cat }}/">{{ cat }}</a>
           {% endif %}
         {% endfor %}
       </span>

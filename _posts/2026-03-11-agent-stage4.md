@@ -934,4 +934,4 @@ print(run_agent_task("搜索AI最新新闻"))
 12. 使用分层记忆系统
 13. 实现输入验证和输出过滤
 
-> 下节预告：阶段5 - AI 系统工程（Ollama、vLLM、n8n）
+> 下节预告：[阶段5 - AI 系统工程（Ollama、vLLM、n8n）](/blog/ops-stage5/)

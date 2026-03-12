@@ -15,6 +15,34 @@ toc: |
   <a href="#8-包管理">8. 包管理</a>
 ---
 
+## 环境准备
+
+### Python 版本
+推荐使用 **Python 3.10** 或更高版本。
+
+### 安装 Python
+- **Windows**: 下载安装包 [python.org](https://www.python.org/downloads/)
+- **macOS**: `brew install python3` 或下载安装包
+- **Linux**: `sudo apt install python3` (Ubuntu/Debian) 或 `sudo yum install python3` (CentOS)
+
+### 安装依赖包
+在终端（命令行）中执行：
+
+```bash
+# 安装常用库
+pip install requests httpx fastapi flask openpyxl python-docx pandas
+
+# 安装异步支持
+pip install aiohttp asyncio
+```
+
+### 获取 API Key（后续阶段使用）
+- **OpenAI**: https://platform.openai.com/api-keys
+- **Anthropic (Claude)**: https://console.anthropic.com/
+- **国内模型**: 各服务商官网申请
+
+---
+
 ## 1. Python 基础语法
 
 ### 变量与数据类型
@@ -23,7 +51,7 @@ Python 是动态类型语言，不需要声明变量类型。
 
 ```python
 # 基础变量
-name = "Freeloop"      # 字符串
+name = "Alice"      # 字符串
 age = 25               # 整数
 height = 1.75          # 浮点数
 is_student = True      # 布尔值
@@ -42,8 +70,8 @@ def greet(name, greeting="Hello"):
     return f"{greeting}, {name}!"
 
 # 调用函数
-message = greet("Freeloop", "Hi")
-print(message)  # 输出: Hi, Freeloop!
+message = greet("Alice", "Hi")
+print(message)  # 输出: Hi, Alice!
 ```
 
 ### 类与对象
@@ -58,7 +86,7 @@ class Person:
         return f"你好，我叫 {self.name}"
 
 # 创建对象
-person = Person("Freeloop", 25)
+person = Person("Alice", 25)
 print(person.say_hello())
 ```
 
@@ -107,7 +135,7 @@ print(squares)  # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 ```python
 # 创建字典
 person = {
-    "name": "Freeloop",
+    "name": "Alice",
     "age": 25,
     "city": "Beijing"
 }
@@ -159,7 +187,7 @@ print(f"x={x}, y={y}")
 import json
 
 # 写入 JSON 文件
-data = {"name": "Freeloop", "age": 25}
+data = {"name": "Alice", "age": 25}
 with open("user.json", "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
 
@@ -676,4 +704,4 @@ uv pip install -r requirements.txt
 11. 创建一个命令行工具：读取 Excel 文件，调用天气 API，将结果保存为 JSON
 12. 用异步编程并发获取多个用户信息
 
-> 下节预告：阶段2 - AI 开发基础（调用 LLM API）
+> 下节预告：[阶段2 - AI 开发基础（调用 LLM API）](/blog/ai-stage2/)

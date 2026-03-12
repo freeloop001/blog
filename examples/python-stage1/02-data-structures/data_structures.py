@@ -10,6 +10,7 @@ fruits.insert(0, "mango")
 # 删除元素
 fruits.remove("banana")
 deleted = fruits.pop()
+print(f"已删除: {deleted}")
 
 # 列表推导式
 squares = [x**2 for x in range(10)]

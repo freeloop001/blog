@@ -499,3 +499,5 @@ docker run -it --name n8n -p 5678:5678 n8nio/n8n
 
 > 3. **不要100%相信 AI**
 > 丧失思考力就等于自杀，必须有自己的独立思考和验证能力
+
+**开始学习**： [阶段1 - Python 开发基础](/blog/learning/2026/03/11/python-stage1.html)

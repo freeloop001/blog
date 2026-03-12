@@ -2,6 +2,7 @@ title: Freeloop's Blog
 description: 技术博客，分享编程与思考
 url: "https://freeloop001.github.io"
 baseurl: "/blog"
+permalink: /:year/:month/:day/:title/
 future: true
 markdown: kramdown
 kramdown:
